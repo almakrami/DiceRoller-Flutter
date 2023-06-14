@@ -11,12 +11,14 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var currentDiceRoll = 2;
+  var fCurrentDiceRoll = 2;
+  var sCurrentDiceRoll = 1;
   final randomaizer = Random();
 
   void rollDice() {
     setState(() {
-      currentDiceRoll = randomaizer.nextInt(6) + 1;
+      fCurrentDiceRoll = randomaizer.nextInt(6) + 1;
+      sCurrentDiceRoll = randomaizer.nextInt(6) + 1;
     });
   }
 
@@ -26,13 +28,19 @@ class _DiceRollerState extends State<DiceRoller> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          "assets/images/dice-$currentDiceRoll.png",
-          width: 200,
+          "assets/images/dice-$fCurrentDiceRoll.png",
+          width: 150,
+        ),
+        Image.asset(
+          "assets/images/dice-$sCurrentDiceRoll.png",
+          width: 150,
         ),
         ElevatedButton(
           onPressed: rollDice,
           style: TextButton.styleFrom(
-              backgroundColor: Colors.black, padding: const EdgeInsets.all(8)),
+            backgroundColor: Colors.black,
+            padding: const EdgeInsets.all(8)
+          ),
           child: const Text("press to roll"),
         )
       ],
