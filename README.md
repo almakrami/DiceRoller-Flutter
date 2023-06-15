@@ -1,6 +1,6 @@
-# first_project
+# Dice Roller
 
-A new Flutter project.
+A Flutter project which has two Dices that can be randomly rolled by pressing one button
 
 ## Getting Started
 
